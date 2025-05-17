@@ -381,10 +381,10 @@ html, body {
     }
     
     .add-btn {
-        width: 2.2rem;
-        height: 2.2rem;
+        width: 2rem;
+        height: 2rem;
         padding: 0.5rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .desc {
