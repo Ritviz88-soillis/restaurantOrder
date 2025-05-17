@@ -224,26 +224,39 @@ html, body {
 .modal {
     display: none;
     position: fixed;
-    right: 0;
-    left: 0;
     top: 0;
-    bottom: 0;
-    margin-top: 100px auto;
-    height: 542px;
-    width: 500px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
     box-shadow: 0px 0px 6px 2px #666;
-    border-radius: 3.89px;
+    border-radius: 8px;
     background-color: #fff;
-    color: whitesmoke;
+    color: black;
 }
 
 #modal-inner {
     margin-top: 30px;
-    width: 450px;
-    height: 50px;
+    width: 100%;
+    padding: 0 25px;
+    box-sizing: border-box;
+    height: auto;
     position: relative;
-    font-size: 30px;
-    line-height: 31.12px;
+    font-size: 24px;
+    line-height: 1.2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -255,31 +268,75 @@ html, body {
 #card {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 30px;
+    padding: 0 25px 30px 25px;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .card-details {
-    width: 430px;
+    width: 100%;
+    max-width: 430px;
     position: relative;
-    margin-bottom: 10px;
-    border-radius: 3.89px;
+    margin-bottom: 15px;
+    border-radius: 8px;
     border: 1.3px solid #757575;
     box-sizing: border-box;
-    height: 71.3px;
-    font-size: 15px;
-    line-height: 31.12px;
+    height: 50px;
+    font-size: 16px;
+    padding: 15px;
+    line-height: 1.2;
     text-align: left;
-    color: #757575;
-    
+    color: #333;
+    background-color: #fff;
 }
 
 #modal-close-btn {
-    margin-top: 50;
-    width: 90%;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 430px;
     position: relative;
-    border-radius: 3.89px;
+    border-radius: 8px;
     background-color: #16db99;
-    height: 71.3px;
- 
+    height: 50px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#modal-close-btn:hover {
+    background-color: #14c589;
+}
+
+.card-details:focus {
+    outline: none;
+    border-color: #16db99;
+    box-shadow: 0 0 0 2px rgba(22, 219, 153, 0.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        top: 50px;
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    #modal-inner {
+        font-size: 20px;
+        padding: 0 15px;
+    }
+    
+    #card {
+        padding: 0 15px 20px 15px;
+    }
+    
+    .card-details, #modal-close-btn {
+        height: 45px;
+        font-size: 14px;
+    }
 }
