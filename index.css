@@ -124,6 +124,12 @@ html, body {
     background-color: #b8b8bb;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
 }
 
 .add-btn:hover {
@@ -381,10 +387,19 @@ html, body {
     }
     
     .add-btn {
-        width: 2rem;
-        height: 2rem;
+        width: 2.2rem;
+        height: 2.2rem;
         padding: 0.5rem;
-        font-size: 1rem;
+        font-size: .75rem;
+    }
+    .add-btn::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        z-index: -1;
     }
     
     .desc {
@@ -467,9 +482,22 @@ html, body {
     }
     
     .add-btn {
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         align-self: center;
+        font-size: 1.5rem;
+        position: relative;
+        z-index: 10; 
+        margin-left: 5px;
+    }
+    .add-btn::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        z-index: -1;
     }
     
     .modal-content {
