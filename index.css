@@ -358,6 +358,7 @@ html, body {
     #logo {
         width: 100vw;
         height: 6rem;
+        padding: 0;
     }
     
     .inner {
@@ -399,7 +400,23 @@ html, body {
         padding: 0;
         margin: 0 0 0 10px;
         outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+    
     }
+    .add-btn::before {
+    content: '+';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    }
+
     .add-btn::after {
         content: '';
         position: absolute;
@@ -500,7 +517,13 @@ html, body {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        -webkit-tap-highlight-color: transparent;        
+        -webkit-tap-highlight-color: transparent;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+        
         margin-left: 5px;
         padding: 0;
         margin: 0 0 0 10px;
