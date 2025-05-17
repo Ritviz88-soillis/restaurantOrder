@@ -1,0 +1,285 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Smythe';
+}
+
+#container {
+    width: 450px;
+    margin: 0 auto;
+}
+#diner{
+    display: block;
+    margin: 35px 0 15px 0;
+    width: 169px;
+    color: #fff;
+    text-align: center;
+    font-size: 39px;
+    line-height: 24px;
+    font-family: Smythe;
+}
+#diner-details {
+    display: block;
+    width: 245px;
+    font-size: 20px;
+    line-height: 13.8px;
+    font-weight: 100;
+    color: #8b8b8b;
+    text-align: center;
+}
+
+#naming {
+    position: relative;
+}
+#header {
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+#logo{
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    height: 10rem;
+}
+
+.menuItems {
+    height: 95px; 
+    margin-bottom: 1.25rem; 
+    border-bottom: 0.125rem solid #D2D2D2; 
+    padding-bottom: 0.625rem; 
+}
+
+.inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem; 
+}
+
+.name {
+    width: 6.2rem;
+    position: relative;
+    font-size: 1.75rem; 
+    font-family: 'Smythe';
+    color: #000;
+    text-align: left;
+    height: 2.2rem; 
+    margin: 0;
+}
+
+.emoji-display {
+    font-size: 4.375rem; 
+    margin-right: 0.9375rem;
+    display: flex;
+    align-items: center;
+    width: 5rem; 
+    height: 5.5rem; 
+}
+
+.desc {
+    display: flex;
+    flex-grow: 1;
+    height: 5.5rem; 
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    height: 5rem; 
+}
+
+.ingred {
+    color: #8b8b8b;
+    height: 1.2rem; 
+    margin: 0.25rem 0;
+}
+
+.price {
+    font-size: 1.25rem; 
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+    height: 1.5rem;
+}
+
+.add-btn {
+    box-sizing: border-box;
+    padding: 0.75rem; 
+    width: 2.5rem; 
+    height: 2.5rem; 
+    border-radius: 50%; 
+    background-color: #b8b8bb;
+    border: none;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #a0a0a0;
+}
+
+#title {
+    text-align: center;
+    font-size: 28px;
+    line-height: 16.8px;
+    font-family: Smythe;
+    margin: 10px 0 15px 0;
+}
+
+#purchase-btn {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    background-color: #16db99;
+    border: none;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    color: #fff;
+    font-family: Verdana;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+}
+
+#purchase-btn:hover {
+    background-color: #14c589;
+}
+
+.hidden {
+    display: none;
+}
+
+#order-inner {
+    margin: 5px;
+    border-bottom: 2px solid black;
+    padding-bottom: 15px;
+}
+
+.preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 5px 0;
+}
+
+.preview-name {
+    display: flex;
+    align-items: center;
+}
+
+.preview-item-name {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.quantity {
+    color: #666;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #bbbbbb;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.remove-btn:hover {
+    color: #888;
+}
+
+.preview-price {
+    font-size: 16px;
+    color: #000;
+}
+
+.total-section {
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.total-label {
+    font-weight: normal;
+    color: #000;
+}
+
+.total-amount {
+    font-weight: bold;
+    color: #000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 542px;
+    width: 500px;
+    box-shadow: 0px 0px 6px 2px #666;
+    border-radius: 3.89px;
+    background-color: #fff;
+    color: whitesmoke;
+}
+
+#modal-inner {
+    margin-top: 30px;
+    width: 450px;
+    height: 50px;
+    position: relative;
+    font-size: 30px;
+    line-height: 31.12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Verdana';
+    justify-content: center;
+    color: black;
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.card-details {
+    width: 430px;
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 3.89px;
+    border: 1.3px solid #757575;
+    box-sizing: border-box;
+    height: 71.3px;
+    font-size: 15px;
+    line-height: 31.12px;
+    text-align: left;
+    color: #757575;
+    
+}
+
+#modal-close-btn {
+    margin-top: 50;
+    width: 90%;
+    position: relative;
+    border-radius: 3.89px;
+    background-color: #16db99;
+    height: 71.3px;
+ 
+}
