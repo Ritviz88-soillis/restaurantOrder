@@ -359,8 +359,8 @@ html, body {
         width: 100vw;
         height: 6rem;
         padding: 0;
-        margin-left: -15px;
-        margin-right: -15px;
+        margin-left: -10px;
+        margin-right: -10px;
     }
     
     .inner {
