@@ -90,10 +90,10 @@ function updateOrder() {
             <div class="preview">
                 <div class="preview-name">
                     <span class="preview-item-name">${item.name}</span>
-                    ${item.quantity > 1 ? `<span class="quantity"> X ${item.quantity}</span>` : ''}
+                    <span class="quantity"> X ${item.quantity}</span>
                     <button class="remove-btn" data-remove-id="${item.id}">remove</button>
                 </div>
-                <div class="preview-price">$${item.price * item.quantity}</div>
+                <div class="preview-price">$${item.price*item.quantity}</div>
             </div>
         `;
     });
@@ -125,7 +125,7 @@ function menuRender() {
                             <p class="price">$${order.price}</p>
                         </div>
                     </div>
-                    <button class="add-btn" data-id="${order.id}">+</button>
+                    <button class="add-btn" data-id="${order.id}"><i class="fa-solid fa-plus"></i></button>
                 </div> 
                 <br>
             </div>

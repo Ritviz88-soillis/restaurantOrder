@@ -117,10 +117,10 @@ html, body {
 
 .add-btn {
     box-sizing: border-box;
-    padding: 0.75rem; 
-    width: 2.5rem; 
-    height: 2.5rem; 
-    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-weight:700;
     background-color: #b8b8bb;
     border: none;
     cursor: pointer;
@@ -162,7 +162,7 @@ html, body {
 
 #order-inner {
     margin: 5px;
-    border-bottom: 2px solid black;
+    
     padding-bottom: 15px;
 }
 
@@ -172,6 +172,7 @@ html, body {
     align-items: center;
     margin-bottom: 0.5rem;
     padding: 5px 0;
+    
 }
 
 .preview-name {
@@ -180,7 +181,7 @@ html, body {
 }
 
 .preview-item-name {
-    font-size: 16px;
+    font-size: 19px;
     font-weight: normal;
 }
 
@@ -210,8 +211,9 @@ html, body {
 }
 
 .total-section {
-    margin-top: 10px;
-    padding-top: 10px;
+    border-top : 2px solid black;
+    margin-top: 15px;
+    padding-top: 20px;
 }
 
 .total-line {
@@ -224,11 +226,13 @@ html, body {
 .total-label {
     font-weight: normal;
     color: #000;
+    font-size: 22px;
 }
 
 .total-amount {
     font-weight: bold;
     color: #000;
+    font-size: 25px;
 }
 
 .modal {
@@ -427,8 +431,6 @@ html, body {
         font-size: 14px;
     }
 }
-
-/* Extra small screens */
 @media (max-width: 480px) {
     #diner {
         font-size: 28px;
