@@ -37,7 +37,7 @@ function handleOrder(itemId) {
     }
 
     document.getElementById("order").classList.remove('hidden');
-    updateOrderDisplay();
+    updateOrder();
 }
 
 function handleRemoveItem(itemId) {
