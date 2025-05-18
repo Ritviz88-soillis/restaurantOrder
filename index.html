@@ -26,6 +26,7 @@
                 <div id = "order-inner"></div>
                 <button id = "purchase-btn">complete order</button>
             </div>
+            <div id = "leaving">Thank You!, Your order is on its way</div>
            
         </div>
 
@@ -33,10 +34,12 @@
             <div class="modal-content">
                 <div id="modal-inner">Enter card details</div>
                 <div id="card">
-                    <input type="text" name="fullName" placeholder="Enter your name" class="card-details" required/>
-                    <input type="tel" name="cardNumber" placeholder="Enter your card number" class="card-details" required/>
-                    <input type="text" name="cvv" placeholder="Enter your CVV" class="card-details" required/>
-                    <button type="submit" id="modal-close-btn">Pay</button>
+                    <form id = "consent">
+                        <input type="text" name="fullName" placeholder="Enter your name" class="card-details" id = "fullName" required=""/>
+                        <input type="number" name="cardNum" placeholder="Enter your card number" class="card-details" id = "cardNum"  required=""/>
+                        <input type="number" name="cVV" placeholder="Enter your CVV" class="card-details" id = "cVV" required=""/>
+                        <button type="submit" id="modal-close-btn">Pay</button>
+                    </form>
                 </div>
             </div>
         </div>

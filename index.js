@@ -1,21 +1,44 @@
 import { menuArray } from "./data.js";
 
-let orderItems = [];
+let orderItems = []
+const form = document.getElementById("consent")
+const arr = []
+
+const localStorageItems = JSON.parse(localStorage.getItem("details"))
+console.log(localStorageItems)
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+    modal.style.display = 'none'
+    orderItems = [];
+    document.getElementById("order").classList.add('hidden')
+    document.getElementById('leaving').style.display = 'flex'
+    
+    // good for messing people
+    const formData = new FormData(form)
+    const fullName = formData.get('fullName')
+    const cardNum = formData.get('cardNum')
+    const cvv = formData.get('cVV')
+    arr.push({
+        name: fullName,
+        cardNumber: cardNum,
+        cVv: cvv 
+    })    
+    localStorage.setItem("details", JSON.stringify(arr))
+})
 
 document.addEventListener("click", function(e) {
     if (e.target.dataset.id) {
-        handleOrder(e.target.dataset.id);
-    } else if (e.target.classList.contains('remove-btn')) {
-        handleRemoveItem(e.target.dataset.removeId);
-    } else if (e.target.id === 'purchase-btn') {
-        handlePurchase();
-    }
-});
+        handleOrder(e.target.dataset.id)
+    } 
+    else if (e.target.classList.contains('remove-btn')) {
+        handleRemoveItem(e.target.dataset.removeId)
+    } 
+    else if (e.target.id === 'purchase-btn') {
+        handlePurchase()
+    } 
+ });
 
-const modalCloseBtn = document.getElementById("modal-close-btn")
-modalCloseBtn.addEventListener('click', function(){
-    modal.style.display = 'none'
-})
 
 function handleOrder(itemId) {
     const menuItem = menuArray.filter(function(item) {
@@ -27,17 +50,19 @@ function handleOrder(itemId) {
     })[0]
 
     if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
+        existingItem.quantity += 1
+    } 
+    else {
         
         orderItems.push({
             ...menuItem,
             quantity: 1
-        });
+        })
     }
 
-    document.getElementById("order").classList.remove('hidden');
-    updateOrder();
+    document.getElementById("order").classList.remove('hidden')
+    document.getElementById('leaving').style.display = 'none' 
+    updateOrder()
 }
 
 function handleRemoveItem(itemId) {
@@ -45,45 +70,43 @@ function handleRemoveItem(itemId) {
     let itemIndex = -1;
     for (let i = 0; i < orderItems.length; i++) {
         if (orderItems[i].id == itemId) {
-            itemIndex = i;
-            break; 
+            itemIndex = i
+            break
         }
     }
     if (itemIndex > -1) {
         if (orderItems[itemIndex].quantity > 1) {
-            orderItems[itemIndex].quantity -= 1;
-        } else {
-            orderItems.splice(itemIndex, 1);
+            orderItems[itemIndex].quantity -= 1
+        } 
+        else {
+            orderItems.splice(itemIndex, 1)
         }
         
         if (orderItems.length === 0) {
-            document.getElementById("order").classList.add('hidden');
-        } else {
-            updateOrder();
+            document.getElementById("order").classList.add('hidden')
+        } 
+        else {    
+            updateOrder()
         }
     }
 }
 
 function handlePurchase() {
-    if (orderItems.length === 0) return;
-    const total = calculateTotal();
-    
+    if (orderItems.length === 0) return
+    const total = calculateTotal()
     modal.style.display = 'block'
-
-    orderItems = [];
-    document.getElementById("order").classList.add('hidden');
 }
 
 function calculateTotal() {
     return orderItems.reduce((total, item) => {
-        return total + (item.price * item.quantity);
-    }, 0);
+        return total + (item.price * item.quantity)
+    }, 0)
 }
 
 function updateOrder() {
-    const orderInner = document.getElementById("order-inner");
+    const orderInner = document.getElementById("order-inner")
 
-    let orderHTML = '';
+    let orderHTML = ''
     
     orderItems.forEach(item => {
         orderHTML += `
@@ -95,10 +118,10 @@ function updateOrder() {
                 </div>
                 <div class="preview-price">$${item.price*item.quantity}</div>
             </div>
-        `;
-    });
+        `
+    })
     
-    const total = calculateTotal();
+    const total = calculateTotal()
     orderHTML += `
         <div class="total-section">
             <div class="total-line">
@@ -106,13 +129,13 @@ function updateOrder() {
                 <span class="total-amount">$${total}</span>
             </div>
         </div>
-    `;
+    `
     
-    orderInner.innerHTML = orderHTML;
+    orderInner.innerHTML = orderHTML
 }
 
 function menuRender() {
-    let menu = '';
+    let menu = ''
     menuArray.forEach(function(order) {
         menu += `
             <div class="menuItems">
@@ -129,9 +152,9 @@ function menuRender() {
                 </div> 
                 <br>
             </div>
-        `;
-    });
-    return menu;
+        `
+    })
+    return menu
 }
 
 function render() {
