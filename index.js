@@ -125,7 +125,7 @@ function menuRender() {
                             <p class="price">$${order.price}</p>
                         </div>
                     </div>
-                    <button class="add-btn" data-id="${order.id}"><i class="fa-solid fa-plus"></i></button>
+                    <button class="add-btn" data-id="${order.id}">+</button>
                 </div> 
                 <br>
             </div>
